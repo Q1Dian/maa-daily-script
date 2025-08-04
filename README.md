@@ -1,11 +1,12 @@
 # Maa-daily-script
 Simple script and daily config for MaaAssistantArknights on linux for my personal use
+
 It's a good template to start on as it is simple and effective
 
 # How to use
 1. Install [maa-cli](https://github.com/MaaAssistantArknights/maa-cli)
-2. put [Daily for YoStarEN](daily.toml) or [Daily for Bilibili](dbily.toml) in $MAA_CONFIG_DIR/tasks folder
-3. run maa.sh
+2. Put [Daily for YoStarEN](daily.toml) or [Daily for Bilibili](dbily.toml) in $MAA_CONFIG_DIR/tasks folder
+3. Run maa.sh
 
 ---
 
