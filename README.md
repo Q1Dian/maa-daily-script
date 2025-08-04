@@ -3,20 +3,21 @@ Simple script and daily config for MaaAssistantArknights on linux for my persona
 
 It's a good template to start on as it is simple and effective
 
-# How to use
+## How to use
 1. Install [maa-cli](https://github.com/MaaAssistantArknights/maa-cli)
 2. Put [Daily for YoStarEN](daily.toml) or [Daily for Bilibili](dbily.toml) in $MAA_CONFIG_DIR/tasks folder
 3. Run maa.sh
 
 ---
 
-# Current behavior (I strongly recommend modifying maa.sh for your own usecase)
+## Current behavior (I strongly recommend modifying maa.sh for your own usecase)
 ./maa.sh [-password]
 
 No password will default to [YoStarEN Daily](daily.toml)
 
 Naving a password param will default to [Bilibili Daily](dbily.toml)
 
+Be aware when you control-c, only do it once, so the phone config will restore properly
 All tasks include:
 - Unlock phone and set resolution to 1920x1080
 - Startup
