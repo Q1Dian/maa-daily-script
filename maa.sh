@@ -12,6 +12,7 @@ PASSWORD="$1"
 adb shell input keyevent KEYCODE_WAKEUP
 sleep 1
 
+# If password is given input password
 if [ $# -ge 1 ]; then
   PASSWORD="$1"
   # Optional: simulate swipe to show password screen
@@ -34,7 +35,7 @@ sleep 2
 # Update MAA
 maa update
 
-# Run daily routine
+# Run daily routine (If there is a password then run dbily, this is for my own personal config, feel free to remove the if statement and MODIFY for your own scenario)
 if [ $# -eq 0 ]; then
 	maa run daily -v
 else
@@ -54,6 +55,8 @@ adb exec-out screencap -p > /tmp/screenshot.png && open /tmp/screenshot.png
 
 # Close Arknights
 adb shell am force-stop com.YoStarEN.Arknights
+adb shell am force-stop com.hypergryph.arknights.bilibili
+# Check your arknights process name with adb shell ps -A 
 
 # Reset screen size
 adb shell wm size reset
