@@ -1,0 +1,63 @@
+"$schema" = "../../schemas/task.schema.json"
+
+# startup game
+[[tasks]]
+type = "StartUp"
+[tasks.params]
+start_game_enabled = true
+client_type = "Bilibili"
+
+[[tasks]]
+type = "Recruit"
+
+[tasks.params]
+refresh = true
+select = [4, 5]
+confirm = [3, 4, 5]
+skip_robot = false
+recruitment_time = { '3' = 460 }
+
+
+# 基建换班
+[[tasks]]
+name = "基建换班"
+type = "Infrast"
+
+[tasks.params]
+mode = 0
+facility = ["Mfg", "Trade", "Power", "Control", "Reception", "Office", "Dorm"]
+drones = "Money"
+dorm_trust_enabled = true
+replenish = true
+
+
+[[tasks]]
+name = "Try Annihilation"
+type = "Fight"
+
+[[tasks.variants]]
+params = { stage = "Annihilation" }
+
+
+[[tasks]]
+name = "Other Fights"
+type = "Fight"
+
+[[tasks.variants]]
+params = { stage = "1-7", series = 0, expiredexpiring_medicine = 1000 }
+
+
+[[tasks]]
+type = "Mall"
+[tasks.params]
+shopping = true
+credit_fight = false
+buy_first = ["招聘许可", "龙门币"]
+blacklist = ["碳", "家具", "加急许可"]
+
+[[tasks]]
+type = "Award"
+[tasks.params]
+mail = true
+orundum = true
+mining = true

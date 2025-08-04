@@ -1,0 +1,82 @@
+"$schema" = "../../schemas/task.schema.json"
+
+# startup game
+[[tasks]]
+type = "StartUp"
+[tasks.params]
+start_game_enabled = true
+client_type = "YoStarEN"
+
+[[tasks]]
+type = "Recruit"
+
+[tasks.params]
+refresh = true
+select = [4, 5]
+confirm = [3, 4, 5]
+skip_robot = false
+recruitment_time = { '3' = 460 }
+
+
+# 基建换班
+[[tasks]]
+name = "基建换班"
+type = "Infrast"
+
+[tasks.params]
+mode = 0
+facility = ["Mfg", "Trade", "Power", "Control", "Reception", "Office", "Dorm"]
+drones = "Money"
+dorm_trust_enabled = true
+replenish = true
+
+
+[[tasks]]
+name = "Try Annihilation"
+type = "Fight"
+
+[[tasks.variants]]
+params = { stage = "Annihilation" }
+
+
+[[tasks]]
+name = "Other Fights"
+type = "Fight"
+
+[[tasks.variants]]
+condition = { type = "OnSideStory", client = "YoStarEN" }
+[tasks.variants.params.stage]
+alternatives = [
+    "1-7", # 将被显示为 "1. SL-7"
+    { value = "OR-7"} # 将被显示为 "2. SL-8 (轻锰矿)"
+]
+default_index = 1
+allow_custom = true
+expiredexpiring_medicine = 1000
+
+[[tasks.variants]]
+condition = { type = "OnSideStory", client = "Bilibili" }
+[tasks.variants.params.stage]
+alternatives = [
+    "1-7", # 将被显示为 "1. SL-7"
+    { value = "1-7"} # 将被显示为 "2. SL-8 (轻锰矿)"
+]
+default_index = 1
+allow_custom = true
+expiredexpiring_medicine = 1000
+
+
+[[tasks]]
+type = "Mall"
+[tasks.params]
+shopping = true
+credit_fight = false
+buy_first = ["Recruit", "LMD"]
+blacklist = ["Carbon", "Furniture", "Expedited"]
+
+[[tasks]]
+type = "Award"
+[tasks.params]
+mail = true
+orundum = true
+mining = true
